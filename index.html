@@ -1,5 +1,522 @@
 <html>
     <head>
-        Welcome
     </head>
+
+<body>
+    <script>
+//objects
+// let inputName = prompt("input your name",'');
+// let inputCity = prompt("input your city",'riyadh');
+
+
+
+// let student = { 
+//     name : inputName , 
+//     city : inputCity
+// };
+
+// for(let key in student){
+//     console.log(student[key])
+// }
+
+//clone 1st method
+// let people =  {x:1 , b:2};
+// let user = {};
+// for (let key in people){
+//     user[key] = people[key]
+// }
+// user.x = 19;
+// console.log(user.x , user.b);
+
+// //clone 2nd method 
+// const food = {beef:4};
+// const clonedFood = Object.assign({},food);
+// console.log(clonedFood);
+
+// food.beef = 2;
+
+// console.log(food);
+// console.log(`${food}`)
+
+
+// random number generation
+// let rand = Math.ceil(1e5 + Math.random() * 9e5);
+// console.log(rand)   
+
+
+
+/////////////////////////////////////////////////
+//STRINGS
+
+//string length 
+//printing char in string 
+// let str = 'anything' ; 
+// console.log(str[str.length -1]);
+// for (let char in str){
+//     console.log(str[char]);
+// }
+//  \' is used for insterting a single quote insede qutoes without ending it
+
+
+/////////////////////////////////////////////////
+//index of (for searching for a word inside a string)
+// we can search starting a certain index
+//if not found it returns -1 which is TRUE in boolean
+
+// let str = 'idk what ever anything idk';
+// let keyword = 'idk';
+
+// let result = str.indexOf(keyword);
+// let resultStartingFormIndex = str.indexOf(keyword,6)
+// console.log(result);
+// console.log(resultStartingFormIndex);
+// if(result !== -1){
+//     console.log('found ' + keyword);
+// }
+// else {
+//     console.log(keyword + ' wasn\'t found');
+// }
+/////////////////////////////////////////////////
+
+// includes method used to search for a certain word 
+
+// let str = 'idk what ever anything idk';
+// let keyword = 'idk';
+
+// let result = str.includes(keyword,2);
+// console.log(result);
+
+// if(result){
+//     console.log('found ' + keyword);
+// }
+// else {
+//     console.log(keyword + ' wasn\'t found');
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// startWith(keyword, index)
+// used to search and check if a string starts with a certain key
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//endsWith(keyword,index)
+// let str = 'whatevesades ssss ss s ?';
+// let keyword = '?';
+
+// let result = str.endsWith(keyword);
+// console.log(result);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// slice(starting index, ending index)
+// ending index is optional (last index is default agument)
+// used to slice the string from starting index to ending index;
+// first index must be greater than second 
+// index can be in negative and it would start from end and go back
+
+//ex
+// let str = 'whatever sad hey as life wt?';
+
+// let result = str.slice(-6,-1)
+// console.log(result);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//substring Method 
+//like slice but the diff is : 
+// the first index can be greater than the seconend index
+// it doesn't take negative values 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//substr Method 
+//like stubstring but we decide starting index 
+// and length of the slice
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// end of Strings ///////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Arrays 
+
+// let arr = ['1', 2 , 'sas', ()=>'hi',66];
+// console.log(arr);
+// console.log(arr[arr.length-1]);
+
+//* arrays in js can take any datatype all togather
+
+// pop method 
+//pops last element and return it 
+
+//push(element) method 
+// push element to the end or the array and return the length of the array after the push
+
+//shift method 
+// shifts one to the right and returns the first element(deleted element) 
+//* not efficient 
+
+//unshift(element) method 
+//adds element to the start of the array and returns the array length
+//* not efficent 
+
+
+
+
+// let arr = [
+//     'a',
+//     'b',
+//     [1,2,3,4,5],
+//     'c'
+// ] 
+
+// for(let i =0 ;i<arr.length; i++){
+//     console.log(arr[i]);
+// }
+// we can use for in or for of 
+// for is the most efficient 
+
+
+//  delete replace Add 
+// splice(starting index, number of index to perform on ) method
+// splice(starting index, number of index to perform on, element) 
+// returns deleted elements
+// can add infinte elements ex (0 , 4 , 4 , 6 , ......)
+
+//ex :
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+
+//delete
+// arr.splice(0,6);
+// console.log(arr);
+
+//replace
+// let arr2 = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// arr2.splice(0,1,15)
+// console.log(arr2);
+
+// add
+// let arr3 = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// arr3.splice(6,0,7)
+// console.log(arr3);
+
+//
+// let arr4 = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// let result = arr4.splice(-4,4)
+// console.log(arr4, result);
+
+
+//slice(starting index, ending index);
+// takes slice of an array
+//ending index is not included 
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// arr.slice(0,4);
+// arr.slice(-5,-1);
+
+
+// concat method 
+// used to merge arrays or tp add elements 
+// returns merged array and doesn't effect main array 
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// let megredArray = arr.concat([11,12,13,14], 'sam', 'sal');
+// console.log(megredArray)
+
+
+//foreach 
+// loops through the array and performs a funcion
+// foreach(function());
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// arr.forEach((element,index,array)=>{
+//     console.log(element,index,array);
+// } );
+
+
+
+//indexof(element) 
+//searchs for an element in an array and returns it's index if found or -1 if not
+//lastIndexOf(element) ; returns the last index the element was found or -1 if not found
+//includes(element); returns Bool, true if found and false if not 
+// can be used with splice and other methods to traverse the arrays more easily
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// let result = arr.indexOf('sam');
+// console.log(result);
+
+// arr.splice(result+1,0,'fal');
+// console.log(arr);
+
+// console.log(arr.lastIndexOf(1));
+
+// console.log(arr.includes('sal'));
+
+
+
+
+//find( function(element){condtion} )
+//or find((element)=>{condtion})
+// finds the object that matches a certain property defined by the function
+// returns only the first element that matches the condtion
+
+
+// let arr = [
+//     {
+//         name:'sal',
+//         age: 22 ,
+//         job : 'developer'
+//     },
+//     {
+//         name:'sam',
+//         age: 52 ,
+//         job : 'director'
+//     },
+//     {
+//         name:'jhon',
+//         age: 33 ,
+//         job : 'actor'
+//     }
+// ]
+// let result = arr.find((item)=> item.job === 'actor');
+// console.log(result);
+
+// let result2 = arr.find((item)=> item.job !== 'actor');
+// console.log(result)
+
+
+//findIndex((element)=>{condtion});
+//like find but returns the index instead
+
+
+//filter((element)=>{condtion})
+//returns an array of all the element that mathces the condtion
+// returns empty array if no element matches the condtion
+
+// let arr = [
+//     {
+//         name:'sal',
+//         age: 22 ,
+//         job : 'developer'
+//     },
+//     {
+//         name:'sam',
+//         age: 52 ,
+//         job : 'director'
+//     },
+//     {
+//         name:'jhon',
+//         age: 33 ,
+//         job : 'actor'
+//     }
+// ]
+// let result = arr.filter((item)=> item.age > 30);
+// console.log(result);
+
+
+//map((element)=>{element.property})
+// loops through the array and returns an array of the selected property in the fundtion.
+// can be useful with other methods
+
+// let arr = [
+//     {
+//         name:'sal',
+//         age: 22 ,
+//         job : 'developer'
+//     },
+//     {
+//         name:'sam',
+//         age: 52 ,
+//         job : 'director'
+//     },
+//     {
+//         name:'jhon',
+//         age: 33 ,
+//         job : 'actor'
+//     }
+// ]
+// let result = arr.map((item)=> item.age);
+// console.log(result);
+
+
+
+// 
+
+//sort() ; in place change
+//sorting order -> empty,int,string,bool
+//if we have nested array it will be placed accroding to it's first element
+// jad3na
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' ,'b', 4,3,2,1 , [0,'a',true], '',function(){}];
+// arr.sort();
+// console.log(arr);
+
+//reverse ; like sort but in reverse.
+
+//split('key')
+//splits string into array of words at key 
+
+// let str = "hello, whatever, split this str into array, gl"
+
+// let strToArray = str.split(',');
+// console.log(strToArray);
+
+// let strToArray2 = str.split(' ');
+// console.log(strToArray2);
+
+
+// join('partion'); pration -> anything can be added to replace the , in the array;
+// array to string at key 
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// console.log(arr.join(''));
+// console.log(arr.join(' and '));
+
+//Array.isArray 
+//checks if array and returns Boolean
+
+// let arr = [1,2,3,4,5,6, 'sam', 'sal' , 'jhon' , 4,3,2,1];
+// let x = 1;
+// Array.isArray(arr);
+// console.log(Array.isArray(arr));
+// console.log(Array.isArray(x));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// end of Arrays ///////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+//                         ********* Date And Time ************  
+
+
+// let now = new Date();
+// console.log(now);
+
+// let date = new Date(0);
+//outputs : Thu Jan 01 1970 03:00:00 GMT+0300 (Arabian Standard Time)
+//new Date(time to add to current time in milliseconds)
+// console.log(date);
+
+// date methods :
+
+// let myDate = new Date(2021 , 5 , 21 , 13 , 54 , 13 , 5);
+//*months start from 0 
+//* 5 here is june 
+
+// console.log(myDate.getFullYear());
+// console.log(myDate.getMonth());
+// console.log(myDate.getDate());
+// console.log(myDate.getHours());
+// console.log(myDate.getMinutes());
+// console.log(myDate.getSeconds());
+// console.log(myDate.getMilliseconds());
+// console.log(myDate.getDay()); // days starting from 0-6
+// console.log(myDate.getTime()); //timestamp
+// console.log(myDate.getTimezoneOffset(0));
+
+// to set we use setters 
+
+//practice * can use trteb * 
+// let weekDays = ['sun','mon','thu','wed','tue','fri','sat'];
+// let myDate = new Date(2021 , 5 , 21 , 13 , 54 , 13 , 5);
+// myDate.getDay();
+// console.log(weekDays[myDate.getDay()]);
+
+
+// 'use strict';
+
+//      let dateTime = '2019-02-09T22:12:33.432+03:00';
+
+//      let parsedDate = Date.parse(dateTime);
+
+//      let convertedDate = new Date(parsedDate);
+
+//      convertedDate.setHours(1);
+
+//      console.log(convertedDate)
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// end of Date & Time ///////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//                         ********* JSON ************ 
+// javaScript Object Notation 
+// JSON is object to String 
+// JSON.stringify(obj) method  
+
+let obj = {
+    name: 'sal' ,
+    age : 22,
+    country: undefined,
+    city:null,
+    is_busy:true 
+}
+let objToJson = JSON.stringify(obj);
+console.log(objToJson);
+
+// when reciving a JSON it's recived as a string 
+// to make it an object we use :
+// JSON.parse(JSON string name)
+
+let myJson = '{"name":"sal","age":22,"city":null,"is_busy":true}';
+let myObject = JSON.parse(myJson);
+console.log(myObject);
+console.log(myObject.name);
+
+
+//replacer : JSON.stringify(obj,['obj.property ', 'obj.property2' ,... ]);
+// takes only the selcected properties and convert it to JSON 
+//
+
+//spacer : JSON.stringify(//replacer : JSON.stringify(obj,['obj.property ', 'obj.property2' ,... ],spacer value));
+//spacer is for readablility purposes 
+//adds spacing before 
+//if using spacer only the value of replacer should be 0
+
+let toJson = JSON.stringify(obj,['name','is_busy'], 2)
+console.log(toJson);
+
+let toJsonSpacerOnly = JSON.stringify(obj,0, 2);
+console.log(toJsonSpacerOnly);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// end of JSON ///////////////
+////////////////////////////////////////////////////////
+
+
+
+//                         ********* schedulling and Timing ************ 
+
+//setTimeOut(funtion(){} , timer in millisecond );
+//each block is golably dependent 
+setTimeout(()=>{console.log('hello')},3000)
+
+// if we use string instead of fun it can be converted auto by JS in many cases
+
+setTimeout("console.log('test')",5000);
+
+function greet(msg,name){
+    console.log(msg + ' ' +name)
+}
+let timerId = setTimeout(()=>{greet('a','bb')}, 3000);
+// 2nd way of writing it : 
+setTimeout(greet, 2000 ,'hi', 'hello');
+
+//clearTimeOut(timerId) ; used to clear timeout and stop it from running 
+clearTimeout(timerId);
+
+
+
+    </script>
+</body>
+    
 </html>
