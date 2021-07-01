@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .myButton {
+            background-color:#44c767;
+            -moz-border-radius:28px;
+            -webkit-border-radius:28px;
+            border-radius:28px;
+            border:1px solid #18ab29;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:13px;
+            margin-top: 20px;
+            padding:5px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #2f6627;
+        }
+        .myButton:hover {
+            background-color:#5cbf2a;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+
+        .i {
+            font-style: italic;
+        }
+
+        .b {
+            font-weight: bold;
+            /*background-color: black;*/
+        }
+    </style>
+<head>
+    
+</head>
+
+<body>
+    <h1 id = "title" > Weclome</h1>
+
+    <div>
+        <table border="1" id = "table">
+            <caption> List Of Users </caption> 
+            <thead> 
+                <tr>
+                <th> Name</th>
+                <th> Status </th>
+                <th> comments </th>
+                </tr>
+            </thead>
+            <tr>
+                <td> faisal </td>
+                <td> online   </td>
+                <td> idk </td> 
+            </tr>
+            <tr>
+                <td> zeid </td>
+                <td> in campus   </td>
+                <td> idk </td> 
+            </tr>
+            <tbody>
+            <tfoot>
+                <tr> Dec </tr>
+            </tfoot>
+        </tbody>
+        </table>
+    </div>
+
+    <div id = "instructions">
+        <ul>
+            <li> welcome to w/e</li>
+            <li> welcome to w/e</li>
+            <li> welcome to w/e</li>
+            <li> welcome to w/e</li>
+            <li> welcome to w/e</li>
+        </ul>
+    </div>
+    <div>
+    <form action = "" id = "signInForm" data-ss="2" >
+        <label for = "name"> Name </label>
+        <input type = "text" id = "inputName" placeholder="Enter your name please" value="">
+        <label for = "password">Password </label>
+        <input type=  "password" id ='inputPassword' placeholder = " enter your password" value="">
+    </form>    
+    </div>
+    <span> <button  class = "myButton" id = "myBtn" > hi </button></span>
+
+
+
+    <script> 
+    // console.log(document.body.previousElementSibling);
+    // console.log(instructions.previousElementSibling);
+    // console.log(document.getElementById("instructions"));
+        
+    // // console.log(document.body.outerHTML);
+    
+    // let mainElement = document.getElementById("title");
+    // mainElement.textContent = 'Hi';
+    
+    // console.log(mainElement);
+    // // console.log(document.getElementById().textContent);
+
+    // console.log(document.body.innerHTML);
+    // console.log(document.body.innerText);
+    // console.log(document.body.textContent);
+    
+    // let userName = document.getElementById("name");
+    // console.log(userName.type);
+
+    // console.log(document.getElementById("signInForm").dataset.ss);
+    // data- attribute name to add custom attribute
+    
+    let inputName = document.getElementById('inputName');
+    
+    function logIn(){
+        if (inputName.value !== ""){
+        let userName = inputName.value;
+        console.log(userName);
+        // inputName.innerText = "";
+    }
+    else{
+        alert('please enter your name','');
+    }
+}
+
+    let btn = document.getElementById('myBtn');
+    // btn.addEventListener('onclick' , )
+
+    btn.addEventListener('click',logIn);
+
+    
+    
+
+
+    </script>
+
+    </body>
+
+
+        </table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

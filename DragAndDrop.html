@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Drag and Drop</title>
+
+    <style> 
+    .mySqaure{
+        background-color: green;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 500px;
+        left: 500px;
+        
+    }
+    .body{
+        background-color: lightgray;
+        height: 700px;
+        width: 700px;
+    }
+    </style>
+
+
+
+    <body class="body" id="myBody">
+    <div class="mySqaure" id = "mySquare" >
+    </div>
+
+    </body>
+
+    
+    <script >
+        let mySquare = document.getElementById("mySquare");
+       let x ,y;
+
+       document.onkeydown = function h(e) {
+            // console.log(e.code);
+            if(e.code === "ArrowUp"){
+            y = mySquare.style.top;
+            x = mySquare.style.left;
+                 y -= 10; 
+                mySquare.style.top = y ;
+                mySquare.style.left = x;  
+                console.log('up'); 
+            }   
+             if (e.code === "ArrowDown"){
+                //  x += 0;
+                 y += 10 ;
+                 mySquare.style.top = y +'px';
+                mySquare.style.left = x +'px';   
+            }
+        }
+
+
+        
+//     mySquare.onmousedown = function(event){ 
+//     mySquare.onmousemove = function(event){
+//       x=  event.clientX;
+//      y = event.clientY;
+//      x-= 10;
+//      y -= 10;
+//      mySquare.style.top = y +'px';
+//      mySquare.style.left = x +'px';
+//         console.log(11,x,y)
+
+//         mySquare.onmouseout = function(event){
+//         mySquare.onmousemove = 'false';
+            
+//         }
+// }
+// }
+        
+       
+        
+    
+        // mouseMovement();
+    
+
+    </script>
+
+</html>

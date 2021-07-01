@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form properties & methods</title>
+    <style>
+        .invalid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="" name="register">
+    <div>
+        <input type="email" name="email" value="ahumaid@flexcourses.com">
+        <div id="error"></div>
+    </div>
+
+    <input type="text" name="username" value="Mogeeb">
+    <div>
+        <label for="male">Male</label>
+        <input type="radio" value="male" id="male" name="gender">
+        <label for="female">Female</label>
+        <input type="radio" value="female" id="female" name="gender">
+    </div>
+    <div>
+        <textarea name="bio" id="" cols="30" rows="10" placeholder="Tell us about yourself">Hello</textarea>
+    </div>
+    <div>
+        <label for="country">Where are you from?</label>
+        <select name="country" id="country">
+            <option value="saudi">Saudi</option>
+            <option value="uae">UAE</option>
+            <option value="egypt">Egypt</option>
+        </select>
+    </div>
+    <div>
+        <h4 >Choose your hobbies:</h4>
+        <select name="hobbies" id="hobbies" multiple>
+            <option value="sleeping">Sleeping</option>
+            <option value="reading">Reading</option>
+            <option value="programming">Programming</option>
+        </select>
+    </div>
+    <div>
+        <label for="agree">Do you agree?</label>
+        <input type="checkbox" id="agree" name="agree">
+    </div>
+    <input type="submit" value="Register!" onclick="console.log('clicked')">
+</form>
+
+
+
+
+<!-- <script>
+let form = document.forms.register;
+let hobbies = form.hobbies;
+// console.log(hobbies.options)
+setTimeout(() =>{
+let selectedHobbies = Array.from(hobbies.options)
+.filter(option => option.selected)
+.map(option => option.value);
+console.log(selectedHobbies);
+}, 1000);
+
+
+</script> -->
+
+
+<script>
+let form = document.forms.register;
+let bio = form.bio;
+bio.onpaste = bio.oncut = bio.oncopy = (()=>{console.log('nope'); return false})
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- 
+<script>
+
+    let form = document.forms.register;
+
+    // form.onsubmit = function (e) {
+    //     e.preventDefault();
+    // }
+
+    setTimeout(() => {
+        form.submit();
+    }, 1000)
+    // clipboard (cut, paste, copy)
+    //
+    // let bio = form.bio;
+    //
+    // bio.onpaste = bio.oncopy = bio.oncut = function(){
+    //     alert('You can\'t use copy/paste/cut')
+    //     return false;
+    // }
+    // bio.onpaste = function(){
+    //     return false;
+    // }
+
+    // form.bio.oncut = function(){
+    //     return false;
+    // }
+    //
+    // form.bio.onpaste = function(){
+    //     return false;
+    // }
+
+    // form.email.oninput = function(){
+    //     console.log(this.value)
+    // }
+    //
+    // form.bio.onchange = function(){
+    //     if(this.value === 'sleeping'){
+    //         alert('Not a very good hobby')
+    //     }else{
+    //         alert('Wow!!')
+    //     }
+    // }
+    //
+    // form.email.onchange = function(){
+    //     console.log(this.value);
+    // }
+    // let email = form.email;
+    //
+    // email.onfocus = function(e){
+    //     error.innerText = ''
+    //     email.classList.remove('invalid')
+    // }
+    //
+    // form.bio.focus();
+    //
+    // email.onblur = function(){
+    //     if(!email.value.includes('@')){
+    //         error.innerText = 'Please provide a correct email format'
+    //         email.classList.add('invalid')
+    //         email.focus();
+    //     }
+    // }
+    //
+    // // select (options, value, selectedIndex)
+    // let country = form.country;
+    // let hobbies = form.hobbies;
+    //
+    //
+    //  let option = new Option('Eating', 'eating', true, true);
+    //
+    //  hobbies.append(option)
+    //
+    // hobbies.options[0].text = 'sleep'
+    // console.log(hobbies.options[0].selected)
+    //
+    // setTimeout(() => {
+    //     let selectedHobbies = Array.from(hobbies.options)
+    //         .filter(option => option.selected)
+    //         .map(option => option.value);
+    //     console.log(selectedHobbies)
+    // }, 1000)
+
+    // setTimeout(() => {
+    //     // country.value = "uae";
+    //     // country.options[2].selected = true;
+    //     country.selectedIndex = 2;
+    //     // console.log(country.value)
+    // }, 2000)
+
+
+    // let bio = form.bio;
+    //
+    // let agree = form.agree;
+    //
+    // setTimeout(() => {
+    //     console.log(agree.checked)
+    // }, 2000)
+    // setTimeout(() => {
+    //     console.log(bio.value)
+    //
+    // }, 2000)
+    // let registerForm = document.forms.register;
+    //
+    // let email = registerForm.email;
+    // let username = registerForm.username;
+    //
+    // console.log(registerForm.elements.gender[0].value)
+</script> -->
+</body>
+</html>

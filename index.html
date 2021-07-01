@@ -397,9 +397,11 @@
 // console.log(now);
 
 // let date = new Date(0);
+//when passin int as argument is starts from 1970 (js zero hour)
 //outputs : Thu Jan 01 1970 03:00:00 GMT+0300 (Arabian Standard Time)
 //new Date(time to add to current time in milliseconds)
 // console.log(date);
+
 
 // date methods :
 
@@ -451,24 +453,24 @@
 // JSON is object to String 
 // JSON.stringify(obj) method  
 
-let obj = {
-    name: 'sal' ,
-    age : 22,
-    country: undefined,
-    city:null,
-    is_busy:true 
-}
-let objToJson = JSON.stringify(obj);
-console.log(objToJson);
+// let obj = {
+//     name: 'sal' ,
+//     age : 22,
+//     country: undefined,
+//     city:null,
+//     is_busy:true 
+// }
+// let objToJson = JSON.stringify(obj);
+// console.log(objToJson);
 
 // when reciving a JSON it's recived as a string 
 // to make it an object we use :
 // JSON.parse(JSON string name)
 
-let myJson = '{"name":"sal","age":22,"city":null,"is_busy":true}';
-let myObject = JSON.parse(myJson);
-console.log(myObject);
-console.log(myObject.name);
+// let myJson = '{"name":"sal","age":22,"city":null,"is_busy":true}';
+// let myObject = JSON.parse(myJson);
+// console.log(myObject);
+// console.log(myObject.name);
 
 
 //replacer : JSON.stringify(obj,['obj.property ', 'obj.property2' ,... ]);
@@ -480,11 +482,11 @@ console.log(myObject.name);
 //adds spacing before 
 //if using spacer only the value of replacer should be 0
 
-let toJson = JSON.stringify(obj,['name','is_busy'], 2)
-console.log(toJson);
+// let toJson = JSON.stringify(obj,['name','is_busy'], 2)
+// console.log(toJson);
 
-let toJsonSpacerOnly = JSON.stringify(obj,0, 2);
-console.log(toJsonSpacerOnly);
+// let toJsonSpacerOnly = JSON.stringify(obj,0, 2);
+// console.log(toJsonSpacerOnly);
 
 
 
@@ -498,27 +500,282 @@ console.log(toJsonSpacerOnly);
 
 //setTimeOut(funtion(){} , timer in millisecond );
 //each block is golably dependent 
-setTimeout(()=>{console.log('hello')},3000)
+// setTimeout(()=>{console.log('hello')},3000)
 
 // if we use string instead of fun it can be converted auto by JS in many cases
 
-setTimeout("console.log('test')",5000);
+// setTimeout("console.log('test')",5000);
 
-function greet(msg,name){
-    console.log(msg + ' ' +name)
-}
-let timerId = setTimeout(()=>{greet('a','bb')}, 3000);
-// 2nd way of writing it : 
-setTimeout(greet, 2000 ,'hi', 'hello');
+// function greet(msg,name){
+//     console.log(msg + ' ' +name)
+// }
+// let timerId = setTimeout(()=>{greet('a','bb')}, 3000);
+// // 2nd way of writing it : 
+// setTimeout(greet, 2000 ,'hi', 'hello');
 
 //clearTimeOut(timerId) ; used to clear timeout and stop it from running 
-clearTimeout(timerId);
+// clearTimeout(timerId);
+
+
+//setInterval(function(){} , timer)
+//allows the code block to run many times accroding to the timer 
+
+
+
+//ex realtime clock
+
+// let myDate = new Date();
+
+// let intervalId = setInterval(() => {
+//     console.clear();
+//     console.log(myDate)
+//     myDate.setSeconds(myDate.getSeconds()+1);
+// } , 1000);
+// clearInterval(intervalId);
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// schedulling and Timing  ///////////////
+////////////////////////////////////////////////////////
+
+
+//                         ********* Rest Parameters ************
+
+//function(...params){};
+//rest params are used to pass arguments into an array 
+
+
+// ex
+// function sum(...pa){
+//     let sum=0;
+//     for(let item of pa){
+//         sum += item ; 
+//     }
+//     return sum;
+// }
+
+// let res = sum(1,2,3,4,5);
+// console.log(res);
+
+
+
+//argument 
+// if we use function(...args){}; we call params to be passed throgh the fun
+// if we use 
+// funcion (){ 
+// for(let arg on arguments){
+    // ....
+// } 
+// then we don't need to ask the fun to pass the arguments 
+// but instead what ever that is passed is then converted to an array
+
+//ex 
+
+// function sum(){
+//     let sum=0;
+//     for(let arg of arguments){
+//         sum += arg ; 
+//     }
+//     return sum;
+// }
+// let res = sum(1,2,3,4,5);
+// console.log(res);
+
+//Spread Operator 
+// it's used to speard the array/String elements into independent single elements
+//it's used for any itteratible object; ex: arrays and string 
+// ex (...[1,2,3,5]);  ->   1,2,3,4,5 
+
+//ex 
+
+// let arr = [1,2,3,4,5,6,7];
+// let max = Math.max(...arr);
+// console.log(max);
+
+// ex2
+
+// let str = 'hello';
+// console.log(...str);
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// OOP  ///////////////
+////////////////////////////////////////////////////////
+
+
+// getters are concidered as proprties rather than functions. 
+// getters are read only * cannot be change by assignent
+// setters are used to access getters and change thier values
+
+// class User {
+//     constructor(firstName, lastName, age){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.age = age; 
+//     }
+//     get yob(){
+//         return new Date().getFullYear() - this.age;
+// }
+// // this is illegal it will cause recurion 
+//     set yob(value){
+//         this.yob = value; 
+//     }
+
+// }
+// let user1 = new User('ali', 'sami',25);
+// console.log(user1.firstName);
+
+// user1.firstName = ' saaa';
+// console.log(user1.firstName);
+
+// console.log(user1.yob);
+// user1.yob = 2000;
+// console.log(user1.yob);
+ 
 
 
 
 
 
-    </script>
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// end of  OOP  ///////////////
+////////////////////////////////////////////////////////
+
+
+
+
+// ***************************** Error Handling *******************
+//error object has 3 proprties :
+// name , message , stack 
+// can't track errors while using time functions like settimeout ..
+// throw   *thros error 
+// error types : 
+// Error , TypeError , SyntaxError , ReferenceError.
+// finally{}  will ALWAYS run at last 
+
+
+
+
+// let userInput = prompt('enter your age ' , '');
+
+// try { 
+//     let userDaa = JSON.parse(userInput);
+//     if (!userData.age){
+//         throw new SyntaxError("your data is not w/e")
+//     }
+// }
+// catch (error){
+//     alert(error.name + error.message);
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// end of  Error  ///////////////
+////////////////////////////////////////////////////////
+
+
+
+// ***************************** Promises ****************
+
+
+
+//callback funtions is a function call within another function
+
+// let users = ['ahmed ', ' sam' , 'sal '];
+
+// function addUser(userName,callback){
+//     setTimeout(()=> {
+//         users.push(userName);
+//         callback();
+//     } , 2000);
+// }
+
+// function getuser(){
+//     console.log(users);
+// }
+
+// addUser('samol' , getuser);
+
+
+//Pomises : 
+// promise(Function(resolve, reject){});
+
+
+//ex 
+
+// let promise = new Promise(function(resolve,reject){
+//     let download = true;
+//     if (download === true ){
+//     resolve('Successful');
+//     }
+//     else{
+//     reject("unsuccessful ");
+//     }})
+
+// // }).then((message)=>{ 
+// //     console.log('your download was ' + message)})
+// //     .catch((message) => {
+// //         console.log('your download was ' + message);
+// //     });
+
+//     const promise2 = new Promise((resolve,reject)=> {
+//         resolve('promise 2 is running');
+//     });
+//     const promise3 = new Promise((resolve,reject)=> {
+//         resolve('promise 3 is running');
+//     });
+
+
+//     //run all promises togather at the same time and return togather
+//     Promise.all([
+//         promise,
+//         promise2,
+//         promise3,
+//     ]).then((message)=> {
+//         console.log(message);
+//     });
+
+
+//     // run all and return the faster promise 
+
+//     Promise.race([
+//         promise,
+//         promise2,
+//         promise3
+//     ]).then((message)=> { 
+//         console.log(message);
+//     });
+
+    // can be wriitin as promise.then((...))
+    // promis.catch((....))
+
+
+//   async function getUsers(url){
+//     let res = await fetch(url);
+//     let users = await res.json();
+//     console.log(users);
+
+//   }
+//  getUsers('https://jsonplaceholder.typicode.com/users');
+
+
+
+
+async function doWork(){
+    
+}
+
+
+ 
+
+
+
+
+</script>
+    
 </body>
     
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en"> 
+    <head> 
+        <meta charset= "UTF-8">
+    </head>
+
+    <body>
+
+
+    </body>
+<script>
+
+let keyWord = 'flexcourses';
+let url = new URL('https://google.com/search') ;
+
+url.searchParams.append('query', keyWord);
+
+let link = document.createElement('a');
+link.href = url.href;
+link.innerText = keyWord;
+document.body.append(link);
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+

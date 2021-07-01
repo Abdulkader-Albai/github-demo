@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listener</title>
+</head>
+<body>
+
+<button id="btn">Click me</button>
+
+<p id="p">Hover here</p>
+
+<script>
+
+    let btn = document.getElementById('btn');
+    let p = document.getElementById('p');
+
+    function draw(x,y){
+        let div = document.createElement('div');
+        div.innerText = 'x';
+        div.style.position = 'absolute';
+        div.style.top = y+'px';
+        div.style.left = x+'px';
+        document.body.append(div);
+    }
+
+    document.body.onclick = function(event){
+        draw(event.clientX, event.clientY)
+    }
+
+    btn.onclick = function(event){
+        console.log(event);
+    }
+
+    //
+    //
+    // function helloConsole(){
+    //     console.log('Hello');
+    // }
+    //
+    // function hello(){
+    //     alert('Hello')
+    // }
+    //
+    // function hello2(){
+    //     alert("Hello 2");
+    // }
+    //
+    // p.addEventListener('mouseover', helloConsole);
+    //
+    // btn.addEventListener('click', function () {
+    //     hello();
+    //     p.removeEventListener('mouseover', helloConsole)
+    // })
+
+
+    // btn.addEventListener('click', hello2)
+    // btn.addEventListener('click', hello, {once: true})
+
+    // btn.onclick = hello;
+    // btn.onclick = hello2;
+
+</script>
+
+</body>
+</html>
