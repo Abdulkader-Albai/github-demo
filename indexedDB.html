@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+</body>
+
+
+<script>
+
+    let openRequest = indexedDB.open('users', 4);
+
+
+    // if there's a change in schema we insert the code here
+    openRequest.onupgradeneeded = () => {
+        console.log('upgrade needed');
+        let db = openRequest.result;
+
+        if (!db.objectStoreNames.contains('products')) {
+            db.createObjectStore('products', { keyPath: 'id' });
+        }
+        if (!db.objectStoreNames.contains('users')) {
+            db.createObjectStore('users', { keyPath: 'id' });
+        }
+    }
+
+    // in transactions we insert here 
+    openRequest.onsuccess = () => {
+        console.log('Success');
+        let db = openRequest.result;
+
+        db.onversionchange = () => {
+            db.close;
+            //  location.reload(); // refreshes the page; //not good method cuz bad user exp
+            alert('pls refresh your page your data base is outdated');
+        }
+
+        //transaction :  if one of the operations didn't pass all operations will stop
+
+        let tx = db.transaction(['products', 'users'], 'readwrite');
+        let productsObj = tx.objectStore('products');
+        let usersObj = tx.objectStore('users');
+        let userReq = usersObj.add({id:1, email: ' qweqweq@qasda.com'});
+
+
+        tx.onerror = () => {
+            console.log('Error in transaction');
+        }
+
+        tx.oncomplete = () => {
+            console.log('transaction completed');
+        }
+
+
+
+        let product = {
+            id: 1,
+            name: 'phone2',
+            price: 10,
+            created_at: new Date()
+        }
+
+        //let insertReq = productsObj.add(product); key cannot be redundent
+        // let insertReq = productsObj.put(product); if key exits it would change value 
+        let insertReq = productsObj.put(product);
+        insertReq.onsuccess = () => { alert('inserted successfully') }
+        insertReq.onerror = () => { console.log(insertReq.error.name) }
+
+        // productsObj.index()
+        
+    }
+
+
+    // blocked when version isn't the same 
+    openRequest.onblocked = () => {
+        console.log('db is blocked , pls refresh your page');
+    }
+
+    openRequest.onerror = () => {
+        console.log('error' + openRequest.error)
+    }
+
+
+
+
+// indexedDB.deleteDatabase('users');
+
+</script>
+
+</html>
