@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<header>Form</header>
+
+<body>
+
+
+<form action = "" name = 'register' submit>
+<div> name  
+<input type = "text"  name = 'username' value="" >
+</div>
+<div>
+      age   <input type = 'text' name = 'age' value="" >
+</div>
+<div>email <input type="email" name="email" value="" >
+ </div>
+ <div>
+    <input type="submit" value="Register!" id= 'regBtn' >
+ </div>
+ <div>
+    <button name='showDataBtn' id="btn">Click me</button>
+ </div>
+
+    
+
+
+</form>
+
+
+<script>
+
+    // localStorage.setItem();
+    // localStorage.getItem();
+    // localStorage.removeItem();
+    // localStorage.clear();
+    let form = document.forms.register;
+
+    let name = form.username;
+    let age = form.age;
+    let email = form.email;
+    let registerButton = form.regBtn;
+    let showDataBtn = form.showDataBtn;
+    
+    console.log(age.value);
+    
+    let user = {name:'' , age: ' ', email:''};
+    
+   registerButton.addEventListener("click", function(event){
+  event.preventDefault()
+
+        event.preventDefault();
+    user.name = name.value;
+    user.age = age.value;
+    user.email = email.value;
+    console.log(name.value);
+    
+    localStorage.setItem('user',JSON.stringify(user));
+
+    
+});
+
+showDataBtn.onclick = function (e) {
+    e.preventDefault();
+    let userdata = JSON.parse(localStorage.getItem('user'));
+
+    let div = document.createElement('div');
+    div.innerHTML = `user name is ${userdata.name}  user age is: ${userdata.age} user email is ${userdata.email}`
+    document.body.append(div)
+}
+
+    
+    </script>
+</body>
+
+
+
+
+
+
+</html>
